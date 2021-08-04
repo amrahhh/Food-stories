@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'stories:home' %}">Stories<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {% if '/' == request.path %} active {% endif %}"><a href="{% url 'stories:home' %}" class="nav-link">{% trans 'Home' %}</a></li>
+                <li class="nav-item {% if 'about' in request.path %} active {% endif %}"><a href="{% url 'stories:about' %}" class="nav-link">{% trans 'About' %}</a></li>
+                <li class="nav-item {% if 'stories' in request.path %} active {% endif %}"><a href="{% url 'stories:stories' %}" class="nav-link">{% trans 'Stories' %}</a></li>
+                <li class="nav-item {% if 'recipes' in request.path %} active {% endif %}"><a href="{% url 'stories:recipes' %}" class="nav-link">{% trans 'Recipes' %}</a></li>
+                <li class="nav-item {% if 'contact' in request.path %} active {% endif %}"><a href="{% url 'stories:contact' %}" class="nav-link">{% trans 'Contact' %}</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item {% if 'user_profile' in request.path %} active {% endif %}"><a href="{% url 'accounts:user_profile' user.pk %}" class="nav-link">{% trans 'My Account' %}</a></li>
+                <li><a href="{% url 'accounts:logout' %}" class="btn btn-black px-3 px-md-4 py-3">{% trans 'Log out' %}</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:login' %}" class="btn btn-black px-3 px-md-4 py-3">{% trans 'Sign in' %}</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

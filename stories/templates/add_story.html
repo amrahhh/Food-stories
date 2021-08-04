@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+
+    <section class="ftco-section contact-section create-story">
+
+        <div class="container">
+
+            <div class="row block-9 justify-content-center">
+
+                <div class="col-md-6 order-md-last d-flex">
+
+                    <form action="" method="POST" enctype="multipart/form-data" class="bg-light p-5 contact-form">
+
+                        <a class="navbar-brand center" href="#">Stories<span>.</span></a>
+
+                        {% csrf_token %}
+                        {% for field in form %}
+
+                            <div class="form-group">
+                                {{ field }}
+                                {% for error in field.errors %}
+                                    <li class="alert-danger">{{ error }}</li>
+                                {% endfor %}
+                            </div>
+
+                        {% endfor %}
+
+                        <div class="form-group">
+
+                            <input type="submit" value="Create" class="btn btn-primary py-3 px-5">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    {% block js%}
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    {%endblock%}
+
+​{% endblock %} 
+
+
+    
+
+    
+
+    
+
+    
+
+ 
+
+ 
+
+
+
+​
+
+
+​
+

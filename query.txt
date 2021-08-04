@@ -1,0 +1,23 @@
+from stories.models import *
+from django.db.models import Count
+from django.db.models import Q
+
+story1 = Story.objects.all().order_by('-created_at')[:5]
+
+cat1 = Category.objects.annotate(Count('stories__title')).order_by('-stories__title__count')[:3]
+
+cat2 = Category.objects.annotate(Count('recipes__title')).order_by('-recipes__title__count')[:3]
+
+comment = Recipe.objects.annotate(Count('comment__context')).order_by('-comment__context__count')[:2]
+
+recipe = Recipe.objects.filter(Q(title__icontains = 'r') & Q(description__icontains = 'r'))
+
+story = Story.objects.filter(Q(title__icontains = 'r') & Q(description__icontains = 'r'))
+
+tag = Tag.objects.annotate(Count('recipe__title')).order_by('-recipe__title__count')[:3]
+
+recipe1 = Recipe.objects.get(id=1)
+recipe1.comment.all().values('context')
+
+story1 = Story.objects.get(id=1)
+story1.comment.all().values('context')

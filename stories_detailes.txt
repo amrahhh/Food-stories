@@ -1,0 +1,86 @@
+category1 = Category.objects.create(title='Food',image='recipe_images/cat.png')
+category2 = Category.objects.create(title='Vagetable',image='recipe_images/cat1.png')
+category3 = Category.objects.create(title='Drink',image='recipe_images/cat2.png')
+category4 = Category.objects.create(title='Paste',image='recipe_images/cat3.png')
+category5 = Category.objects.create(title='Cat',image='recipe_images/cat4.png')
+
+category1 = Category.objects.get(id=1)
+category2 = Category.objects.get(id=2)
+category3 = Category.objects.get(id=3)
+category4 = Category.objects.get(id=4)
+category5 = Category.objects.get(id=5)
+
+
+tag1 = Tag.objects.create(title='Travel')
+tag2 = Tag.objects.create(title='Sport')
+tag3 = Tag.objects.create(title='Vegan')
+tag4 = Tag.objects.create(title='Vegeterian')
+tag5 = Tag.objects.create(title='Drink')
+
+tag1 = Tag.objects.get(id=1)
+tag2 = Tag.objects.get(id=2)
+tag3 = Tag.objects.get(id=3)
+tag4 = Tag.objects.get(id=4)
+tag5 = Tag.objects.get(id=5)
+
+story1 = Story.objects.create(title='Story1', description = 'Story 1-in mezmunu', image ='recipe_images/story1.png', slug = 'story1', category = category5, author = User.objects.get(id=1))
+story2 = Story.objects.create(title='Story2', description = 'Story 2-in mezmunu', image ='recipe_images/story2.png', slug = 'story2', category = category4, author = User.objects.get(id=1))
+story3 = Story.objects.create(title='Story3', description = 'Story 3-in mezmunu', image ='recipe_images/story3.png', slug = 'story3', category = category3, author = User.objects.get(id=1))
+story4 = Story.objects.create(title='Story4', description = 'Story 4-in mezmunu', image ='recipe_images/story4.png', slug = 'story4', category = category2, author = User.objects.get(id=1))
+story5 = Story.objects.create(title='Story5', description = 'Story 5-in mezmunu', image ='recipe_images/story5.png', slug = 'story5', category = category1, author = User.objects.get(id=1))
+
+story1 = Story.objects.get(id=1)
+story2 = Story.objects.get(id=2)
+story3 = Story.objects.get(id=3)
+story4 = Story.objects.get(id=4)
+story5 = Story.objects.get(id=5)
+
+recipe1 = Recipe.objects.create(title='Recipe1', short_description = 'Recipe 1-in mezmunu', image ='recipe_images/recipe1.png', description = 'Recipe 1-in uzun mezmunu', category = category5, author = User.objects.get(id=1))
+recipe2 = Recipe.objects.create(title='Recipe2', short_description = 'Recipe 2-in mezmunu', image ='recipe_images/recipe2.png', description = 'Recipe 1-in uzun mezmunu', category = category4, author = User.objects.get(id=1))
+recipe3 = Recipe.objects.create(title='Recipe3', short_description = 'Recipe 3-in mezmunu', image ='recipe_images/recipe3.png', description = 'Recipe 1-in uzun mezmunu', category = category3, author = User.objects.get(id=1))
+recipe4 = Recipe.objects.create(title='Recipe4', short_description = 'Recipe 4-in mezmunu', image ='recipe_images/recipe4.png', description = 'Recipe 1-in uzun mezmunu', category = category2, author = User.objects.get(id=1))
+recipe5 = Recipe.objects.create(title='Recipe5', short_description = 'Recipe 5-in mezmunu', image ='recipe_images/recipe5.png', description = 'Recipe 1-in uzun mezmunu', category = category1, author = User.objects.get(id=1))
+
+recipe1 = Recipe.objects.get(id=1)
+recipe2 = Recipe.objects.get(id=2)
+recipe3 = Recipe.objects.get(id=3)
+recipe4 = Recipe.objects.get(id=4)
+recipe5 = Recipe.objects.get(id=5)
+
+comment1 = Comment.objects.create(context='Comment1', email = 'comment@gmail.com', website ='comment.com', message = 'Messajin meznumu', recipe = recipe1, author = User.objects.get(id=1), story = story1)
+comment2 = Comment.objects.create(context='Comment2', email = 'comment@gmail.com', website ='comment.com', message = 'Messajin meznumu', recipe = recipe1, author = User.objects.get(id=1), story = story1)
+comment3 = Comment.objects.create(context='Comment3', email = 'comment@gmail.com', website ='comment.com', message = 'Messajin meznumu', recipe = recipe1, author = User.objects.get(id=1), story = story1)
+comment4 = Comment.objects.create(context='Comment4', email = 'comment@gmail.com', website ='comment.com', message = 'Messajin meznumu', recipe = recipe1, author = User.objects.get(id=1), story = story1)
+comment5 = Comment.objects.create(context='Comment5', email = 'comment@gmail.com', website ='comment.com', message = 'Messajin meznumu', recipe = recipe1, author = User.objects.get(id=1), story = story1)
+
+comment1 = Comment.objects.get(id=1)
+comment2 = Comment.objects.get(id=2)
+comment3 = Comment.objects.get(id=3)
+comment4 = Comment.objects.get(id=4)
+comment5 = Comment.objects.get(id=5)
+
+contact1 = Contact.objects.create(name='Contact1', email = 'contact@gmail.com', subject ='subject1', message = 'Mesajin meznumu')
+contact2 = Contact.objects.create(name='Contact2', email = 'contact@gmail.com', subject ='subject1', message = 'Mesajin meznumu')
+contact3 = Contact.objects.create(name='Contact3', email = 'contact@gmail.com', subject ='subject1', message = 'Mesajin meznumu')
+contact4 = Contact.objects.create(name='Contact4', email = 'contact@gmail.com', subject ='subject1', message = 'Mesajin meznumu')
+contact5 = Contact.objects.create(name='Contact5', email = 'contact@gmail.com', subject ='subject1', message = 'Mesajin meznumu')
+
+contact1 = Contact.objects.get(id=1)
+contact2 = Contact.objects.get(id=2)
+contact3 = Contact.objects.get(id=3)
+contact4 = Contact.objects.get(id=4)
+contact5 = Contact.objects.get(id=5)
+
+subscriber1 = Subscriber.objects.create(email = 'subscriber@gmail.com')
+subscriber2 = Subscriber.objects.create(email = 'subscriber1@gmail.com')
+subscriber3 = Subscriber.objects.create(email = 'subscriber2@gmail.com')
+subscriber4 = Subscriber.objects.create(email = 'subscriber3@gmail.com')
+subscriber5 = Subscriber.objects.create(email = 'subscriber4@gmail.com')
+
+subscriber1 = Subscriber.objects.get(id=1)
+subscriber2 = Subscriber.objects.get(id=2)
+subscriber3 = Subscriber.objects.get(id=3)
+subscriber4 = Subscriber.objects.get(id=4)
+subscriber5 = Subscriber.objects.get(id=5)
+
+
